@@ -1,6 +1,7 @@
-# UC Berkeley PhD thesis template
+# UC Berkeley MA thesis
 
-Pulled from [Paul Vojta's website](https://math.berkeley.edu/~vojta/tex/ucbthesis-phd.html) and slightly adapted.
+Template pull from [Harold Pimentel's template](https://github.com/pimentel/ucbthesis-phd).
+Originally pulled from [Paul Vojta's website](https://math.berkeley.edu/~vojta/tex/ucbthesis-phd.html) and slightly adapted.
 
 ## configuration
 
