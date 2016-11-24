@@ -1,8 +1,8 @@
-# Biostatistics M.A. thesis, UC Berkeley
+# my Biostatistics M.A. thesis (UC Berkeley)
 
-> [Nima Hejazi's](http://nimahejazi.org) masters thesis, submitted in partial
-> satisfaction of the requirements for the M.A. in Biostatistics, at UC
-> Berkeley, titled "Complex TMLE stuff for local estimation in DNA Methylation"
+> "Complex TMLE stuff for local estimation in DNA Methylation," a masters thesis
+> submitted in partial satisfaction of the requirements for the M.A. in
+> Biostatistics, at UC Berkeley, by [Nima Hejazi](http://nimahejazi.org).
 
 ---
 
@@ -15,9 +15,9 @@ Estimation (TMLE) to...
 
 ## Build
 
-A working LaTeX distribution is required to compile this thesis.
+_A working installation of LaTeX is required to compile this thesis._
 
-* `make all` - compile the full thesis document, generating two subdirectories,
+* `make all` - compile the full thesis document, generating two subdirectories:
     `pdf` (containing the thesis and approval page as PDF) and `output`
     (containing auxiliary documents created in the compilation process).
 
@@ -35,18 +35,16 @@ A working LaTeX distribution is required to compile this thesis.
 
 ## License
 
-&copy; 2017 [Nima Hejazi](http://nimahejazi.org).
+&copy; 2017 [Nima Hejazi](http://nimahejazi.org)
 
-Content released under a <a rel="license"
+The contents of this repository are released under a <a rel="license"
 href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
-Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA
-4.0)</a>.
-
+Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
 alt="Creative Commons License"
 style="border-width:0"
 src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+
 A human-readable version of the CC BY-NC-SA 4.0 license is available
-[here](https://creativecommons.org/licenses/by-nc-sa/4.0/), and the full
-license may be examined
-[here](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+[here](https://creativecommons.org/licenses/by-nc-sa/4.0/); the full license may
+be examined [here](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
