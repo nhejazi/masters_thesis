@@ -1,6 +1,6 @@
 # Yet Another (Biostatistics) M.A. Thesis
 
-> "Targeted Data-Adaptive Estimation of Local Treatment Effects with
+> "Targeted Estimation of Data-Adaptive Local Treatment Effects with
 > Applications in Genomics," a masters thesis submitted in partial satisfaction
 > of the requirements for the M.A. in Biostatistics, at U.C. Berkeley, by [Nima
 > Hejazi](http://nimahejazi.org).
@@ -22,16 +22,16 @@ Estimation (TMLE) to...
 
 * Chapter 3: Applications to the study of DNA methylation
 
-* Chapter 4: Software module - the "methadapt" R package
+* Chapter 4: Software module - R package "methadapt"
 
 ---
 
 ## Related
 
-* [`methadapt`](https://github.com/nhejazi/methadapt/tree/master) - an R
-    package implementing a specific realization of the local average treatment
-    effect parameter (discussed in this thesis), designed to provide inference
-    on CpG sites based on data produced by DNA methylation assays.
+* [`methadapt`](https://github.com/nhejazi/methadapt/tree/master) - R package
+    implementing an algorithm to data-adaptively identify and estimate local
+    average treatment effects, specifically designed to provide inference
+    on CpG sites using data produced by standard DNA methylation assays.
 
 ---
 
@@ -51,7 +51,7 @@ document.
 
 ## License
 
-&copy; 2017 [Nima Hejazi](http://nimahejazi.org)
+&copy; 2017 [Nima S. Hejazi](http://nimahejazi.org)
 
 The contents of this repository are released under a <a rel="license"
 href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
