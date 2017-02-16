@@ -1,12 +1,11 @@
 # Yet Another (Biostatistics) M.A. Thesis
 
-> "Targeted Estimation of Data-Adaptive Local Treatment Effects with
-> Applications in Genomics," a masters thesis submitted in partial satisfaction
-> of the requirements for the M.A. in Biostatistics, at U.C. Berkeley, by [Nima
+> "Targeted Learning of Data-Adaptive Variable Importance Measures for Biomarker
+> Discovery," a masters thesis submitted in partial satisfaction of the
+> requirements for the M.A. in Biostatistics, at U.C. Berkeley, by [Nima
 > Hejazi](http://nimahejazi.org).
 
 ---
-
 ## Summary
 
 This thesis presents a generalized method for using Targeted Minimum Loss-Based
@@ -14,24 +13,12 @@ Estimation (TMLE) to...
 
 ---
 
-## Contents
-
-* Chapter 1: Causal inference in high-dimensional biology
-
-* Chapter 2: The local average treatment effect parameter
-
-* Chapter 3: Applications to the study of DNA methylation
-
-* Chapter 4: Software module - R package "methadapt"
-
----
-
 ## Related
 
-* [`methadapt`](https://github.com/nhejazi/methadapt/tree/master) - R package
-    implementing an algorithm to data-adaptively identify and estimate local
-    average treatment effects, specifically designed to provide inference
-    on CpG sites using data produced by standard DNA methylation assays.
+* [`biotmle`](http://nimahejazi.org/biotmle/) - R package that facilitates
+  biomarker discovery by generalizing the moderated t-statistic of Smyth for use
+  with asymptotically linear target parameters (to assess variable importance)
+  by using Targeted Minimum Loss-Based Estimation.
 
 ---
 
