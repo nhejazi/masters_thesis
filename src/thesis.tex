@@ -11,6 +11,8 @@
 
 \documentclass[masters]{ucbthesis}
 \usepackage{biblatex}
+\usepackage{graphics}
+\graphicspath{ {figs/} }
 
 % To compile this file, run "latex thesis", then "biber thesis"
 % (or "bibtex thesis", if the output from latex asks for that instead),
@@ -24,12 +26,7 @@
 % be indented (like the others), then include this line:
 % \usepackage{indentfirst}
 
-\newtheorem{theorem}{Jibberish}
-
 \bibliography{references}
-
-\hyphenation{mar-gin-al-ia}
-\hyphenation{bra-va-do}
 
 \begin{document}
 
@@ -66,26 +63,20 @@
 \clearpage
 \listoftables
 
-%\begin{acknowledgements}
-%Bovinely invasive brag; cerulean forebearance.
-%Washable an acre. To canned, silence in foreign.
-%Be a popularly. A as midnight transcript alike.
-%To by recollection bleeding. That calf are infant. In clause.
-%Buckaroo loquaciousness?  Aristotelian!
-%Masterpiece as devoted. My primal the narcotic. For cine?
-%In the glitter. For so talented. Which is confines cocoa accomplished.
-%Or obstructive, or purposeful.
-%And exposition? Of go. No upstairs do fingering.
-%\end{acknowledgements}
+\begin{acknowledgements}
+To my many mentors, all of whom contributed to this work, chief among them Alan
+Hubbard and Mark van der Laan, without whose generous support this task would
+have been genuinely impossible.
+\end{acknowledgements}
 
 \end{frontmatter}
 
 \pagestyle{headings}
 
-% (Optional) \part{First Part}
-
-\include{chap1}
-\include{chap2}
+\include{intro}
+\include{methods}
+\include{analysis}
+\include{discussion}
 
 % \appendix
 % \chapter{More Monticello Candidates}
