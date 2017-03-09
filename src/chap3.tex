@@ -13,13 +13,13 @@ little bearing on statistical inference.
 
 Using the ATE, the moderated t-statistic for the test performed is as follows:
 
-$$\tilde{t}_b=\frac{\sqrt[]{n}
-(\hat{\Psi}_{b,n}^{A = max(A)}-\hat{\Psi}_{b,n}^{A = min(A)})}{\tilde{S}_{b,n}^2}$$
-where  $\tilde{S}_{b,n}^2=\frac{d_0S_0^2+d_b (\sigma^b_n)^2}{d_0+d_b}$ where
-$d_b$ is the degrees of freedom for the $b^{th}$ biomarker, $d_0$ is the
-degrees of freedom for the remaining biomarkers, $\sigma^b_n$ is the standard
-deviation for the $b^{th}$ biomarker and $S_0$ is the common standard deviation
-across all biomarkers towards which empirical Bayes performs shrinkage.
+$$\tilde{t}_b=\frac{\sqrt[]{n} (\hat{\Psi}_{b,n}^{A = max(A)}-
+\hat{\Psi}_{b,n}^{A = min(A)})}{\tilde{S}_{b,n}^2}$$ where
+$\tilde{S}_{b,n}^2=\frac{d_0S_0^2+d_b (\sigma^b_n)^2}{d_0+d_b}$ where $d_b$ is
+the degrees of freedom for the $b^{th}$ biomarker, $d_0$ is the degrees of
+freedom for the remaining biomarkers, $\sigma^b_n$ is the standard deviation for
+the $b^{th}$ biomarker and $S_0$ is the common standard deviation across all
+biomarkers towards which empirical Bayes performs shrinkage.
 
 In order to isolate a set of differentially upregulated or downregulated
 biomarkers, we apply the moderated t-statistic of \cite{smyth2004linear} to
@@ -29,12 +29,13 @@ ATE-transformed values between the exposed and unexposed groups (a coefficient
 corresponding to exposure in the gene-wise linear models fit via LIMMA),
 standard errors of the coefficient, raw p-values, and the adjusted p-values
 based on the Benjamini-Hochberg procedure for controlling the False Discovery
-Rate \cite{benjamini1995controlling}. See table \ref{table:results} below:
+Rate \cite{benjamini1995controlling}. See table ~\ref{table:topresults} below:
 
 % latex table generated in R 3.3.2 by xtable 1.8-2 package
 % Fri Mar  3 14:28:32 2017
 \begin{table}[H]
 \centering
+\label{table:topresults}
 \begin{tabular}{rlrrr}
   \hline
   & Biomarker ID & ATE Change & p-value & adjusted p-value \\
@@ -83,7 +84,7 @@ BH-corrected p-values on the y-axis, was produced. The heatmap is displayed as
   \vspace{-8em}
   \label{fig:heatmap}
   \centering
-  \includegraphics[scale=0.75]{superheatmap.pdf}
+  \includegraphics[scale=0.75]{figs/superheatmap.pdf}
   \caption{Heatmap of the ATE estimates. Blue indicates a depression in the
     ATE, while red indicates an increase in the ATE, based on exposure to the
     maximal level of benzene as opposed to the minimal level.}

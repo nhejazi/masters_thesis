@@ -11,8 +11,6 @@
 
 \documentclass[masters]{ucbthesis}
 \usepackage{biblatex}
-\usepackage{graphics}
-\graphicspath{ {figs/} }
 
 % To compile this file, run "latex thesis", then "biber thesis"
 % (or "bibtex thesis", if the output from latex asks for that instead),
@@ -28,13 +26,17 @@
 
 \bibliography{references}
 
+\include{_preamble}
+
 \begin{document}
 
 \input{configuration}
 
 \maketitle
+
 % Delete (or comment out) the \approvalpage line for the final version.
 % \approvalpage
+
 \copyrightpage
 
 \include{abstract}
@@ -58,8 +60,10 @@
 % separate pages.
 
 \tableofcontents
+
 \clearpage
 \listoffigures
+
 \clearpage
 \listoftables
 
@@ -73,14 +77,14 @@ have been genuinely impossible.
 
 \pagestyle{headings}
 
-\include{intro}
-\include{methods}
-\include{analysis}
-\include{discussion}
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+
+\printbibliography
 
 % \appendix
 % \chapter{More Monticello Candidates}
-
-\printbibliography
 
 \end{document}

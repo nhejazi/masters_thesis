@@ -23,7 +23,7 @@ generalizeable to situations with greater numbers of potential exposure
 biomarkers and confounders. For instance, one  aim of analyzing data sets of
 the type described can be to rank the importance of a set of candidate
 biomarkers based on their independent associations with a treatment variable
-(exposure, in the case described in \ref{data}). In order to build a ranking of
+(exposure, in the case described in ~\ref{data}). In order to build a ranking of
 biomarkers, we start by defining a variable importance measure (VIM)
 \cite{van2011targeted}.
 
@@ -31,7 +31,7 @@ Let $O = (W, A, Y) \sim P_{0}$ represent a random variable defined on the
 observed data, where $W$ are the confounders, $A$ the exposure of interest,
 and $Y=(Y_b, b = 1, \dots, B)$ a vector of potential biomarkers, with $P_{0}$
 being the unknown probability distribution of the full data. For the specific
-data set described in \ref{data}, $W = (W_{1}, W_{2}, W_{3}, W_{4}, W_{5})$,
+data set described in ~\ref{data}, $W = (W_{1}, W_{2}, W_{3}, W_{4}, W_{5})$,
 where age ($W_{1}$) is a continuous measure, gender ($W_{2}$) is binary,
 smoking status ($W_{3}$) is binary, BMI ($W_{4}$) is a continuous measure, and
 alcohol consumption ($W_{5}$) is binary; $A$ is a binary exposure; and $Y_{b}$
@@ -45,7 +45,7 @@ defined on the full data. Let $P_{n}$ represent the  empirical distribution of
 $(O_{1},O_{2}, \dots, O_{n})$. We will focus on cases when the $O_i$ are
 i.i.d., but one can easily generalize the following when the data are clustered
 (e.g., have repeated samples from same biological unit). We are interested in
-substitution estimators of the form $\Psi(P_{n})$ -- that is, we apply the same
+substitution estimators of the form $\Psi(P_{n})$ - that is, we apply the same
 mapping as $\Psi$, but to the empirical distribution, $P_n$ to derive our
 estimate (e.g, $\Psi$ could be the expectation operator). In using this general
 definition, we expand the parameters of interest beyond coefficients in a
@@ -55,7 +55,7 @@ Specifically, we propose here what is referred to as a targeted variable
 importance measure
 \cite{bembom2009biomarker}:
 \begin{eqnarray}
-\label{target_p}
+\label{targetparam}
 \Psi_{b} \equiv \Psi_{b}(P_{0}) = \E _{W,0}[\E_{0}(Y_{b} \mid A = 1, W) -
 \E_{0}(Y_{b} \mid A = 0, W)].
 \end{eqnarray}
@@ -66,16 +66,16 @@ been shown that, under identifiability assumptions (e.g., no unmeasured
 confounding), this parameter can be statistically estimated via targeted
 maximum likelihood estimation \cite{van2011targeted}. Such parameters are
 significant in that they are not defined explicitly via parametric statistical
-models, leaving one free to fit the requisite models  data-adaptively,
-minimizing assumptions wherever possible, and yet still estimating a relatively
-simple parameter with rich scientific interpretation.
+models, leaving one free to fit the requisite models data-adaptively, minimizing
+assumptions wherever possible, and yet still estimating a relatively simple
+parameter with rich scientific interpretation.
 
 \subsection{Estimation}\label{estimation}
 
 As noted previously (in Section~\ref{targetparam}), the target parameter is
 defined as a feature of the unknown probability distribution $P_{0}$. While
 there are several general classes of estimators available for estimating
-$\Psi$, here we focus on a substitution estimator. Examining \ref{target_p},
+$\Psi$, here we focus on a substitution estimator. Examining ~\ref{targetparam},
 one can anticipate that a substitution estimator will rely on estimates of
 two components of the data-generating mechanism, $P_0$: $E_0 (Y \mid A=a, W)$
 and $P_0(w)$, or the true regression of $Y$ on $(A,W)$ and the marginal
@@ -97,10 +97,10 @@ estimation and deriving robust inference.
 
 The first step in the two-stage TMLE procedure is to derive an initial estimate
 of $Q^{b}_{0}$, referred to as $Q^{(b, 0)}_{n}$. For instance, one could assume
-a parametric statistical model that results in \ref{target_p} being equivalent
-to a regression coefficient (e.g., $Q^{b}_{0}(A, W) = \alpha^{b} +
+a parametric statistical model that results in \ref{targetparam} being
+equivalent to a regression coefficient (e.g., $Q^{b}_{0}(A, W) = \alpha^{b} +
 \beta^{b}_{A}A + \beta^{b}_{W}W$). To avoid the pitfalls associated with model
-misspecification, we elect to define \ref{target_p} in a nonparametric
+misspecification, we elect to define \ref{targetparam} in a nonparametric
 statistical model, using data-adaptive tools to estimate $Q^{b}_{0}$.
 Specifically, given that the true model $Q^{b}_{0}$ is typically unknown, more
 accurate estimates may be derived by employing data-adaptive (machine learning)
@@ -150,7 +150,7 @@ $A$ and $Y$. In this case, bias in estimation of $\Psi_b(P_0)$ is caused by
 under-fitting.  Thus, the resultant TMLE estimator is more robust to model
 misspecification than the initial substitution estimator (based on the initial
 fit of Super Learner), and is also (if one has consistent estimates of all
-relevant portions of $P_0$, the semi-parametrically (locally) efficient. For a
+relevant portions of $P_0$) the semi-parametrically (locally) efficient. For a
 detailed discussion of the theory of TMLE and formal justifications of the
 efficiency of the resultant estimator, consult the appendix of
 \cite{van2011targeted}.
@@ -163,7 +163,7 @@ $$
 Q^{(b, 1)}_n(A, W) = Q^{(b, 0)}_n(A, W) + \hat{\epsilon} h_{\hat{g}}(A, W)
 $$
 where the initial fit, $Q^{(b, 0)}_n(A, W)$ is treated as an offset, and
-$h_{\hat{g}}(A, W)$ is a "clever" covariate:
+$h_{\hat{g}}(A, W)$ is a ``clever'' covariate:
 $$
 h_{\hat{g}}(A, W) = \frac{I(A = 1)}{\hat{g}(1 \mid W)} -
 \frac{I(A = 0)}{\hat{g}(0 \mid W)}
@@ -178,8 +178,8 @@ but for our application, a simple main-terms logistic regression is usually
 used. In the final step of this procedure, the TMLE estimate of $\Psi_b$ is
 derived using the augmented estimate of $Q$:
 \begin{eqnarray}
-  \hat{\Psi}_b(P^*_n) = \frac{1}{n}\sum^{n}_{i = 1}[Q^{(b, 1)}_n(1, W_i) - Q^{(b,
-  1)}_{n}(0, W_i)],
+  \hat{\Psi}_b(P^*_n) = \frac{1}{n}\sum^{n}_{i = 1}[Q^{(b, 1)}_n(1, W_i) -
+  Q^{(b, 1)}_{n}(0, W_i)],
 \end{eqnarray}
 where $P^*_n$ is the estimate of the data-generating distribution based on
 TMLE, in this case, based on estimates $\hat{g},Q^{(b,1)}_n$.
@@ -192,11 +192,11 @@ As shown in \cite{van2011targeted}, $\Psi_b(P^*_n)$ is an asymptotically
 linear estimator of $\Psi_b(P_0)$, with influence curve $IC(O_i)$ if it
 satisfies
 \begin{eqnarray}
-\sqrt{n}(\Psi_b(P^*_n) - \Psi_b(P_0)) = \frac{1}{\sqrt{n}}\sum^{n}_{i = 1}IC(O_i)
-+ o_p(1).
+\sqrt{n}(\Psi_b(P^*_n) - \Psi_b(P_0)) = \frac{1}{\sqrt{n}}\sum^{n}_{i =
+  1}IC(O_i) + o_p(1).
 \label{eqn:IC}
 \end{eqnarray}
-Note from equation \ref{eqn:IC} above that the variance of $\hat{\Psi}_b(P_n)$
+Note from equation ~\ref{eqn:IC} above that the variance of $\hat{\Psi}_b(P_n)$
 is well approximated by the sample variance of the influence curve divided by
 the sample size. When considering biomarkers, the plug-in influence curve (IC)
 for the ATE is
@@ -280,6 +280,6 @@ practical effect is that it tends to reduce the number of significant
 biomarkers, driven by (potentially) erroneous underestimates of variation of
 the parameter estimates of interest, $\Psi_b(P_n)$. The convenience of this
 approach is that it can handle any asymptotically linear estimator (can be
-represented as in \ref{eqn:IC}) , which covers many if not most estimators of
-parameters of interest. An open source R package, ``biotmle'',
-implementing the described procedure, is available.
+represented as in (~\ref{eqn:IC})), which covers many if not most estimators of
+parameters of interest. An open source R package, ``biotmle'', implementing the
+described procedure, is available.
