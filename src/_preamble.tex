@@ -1,3 +1,7 @@
+%% Use the graphics package to include figures
+\usepackage{biblatex}
+\bibliography{references}
+
 \usepackage{graphicx}
 
 \usepackage{chngcntr}
@@ -6,119 +10,12 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{dsfont}
 \usepackage{mathptmx}
-
-%\usepackage{amsthm}
-%\usepackage{thmtools}
-%\declaretheorem[name=Theorem]{thm}
-%\declaretheorem[style=definition]{example}
-%\declaretheorem[style=definition]{definition}
-
-%-----------------------------------------------------------------------------
-% Special-purpose color definitions (dark enough to print OK in black and white)
-\usepackage{color}
-
-% A few colors to replace the defaults for certain link types
-\definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
-\definecolor{darkorange}{rgb}{.71,0.21,0.01}
-\definecolor{darkgreen}{rgb}{.12,.54,.11}
-
-%-----------------------------------------------------------------------------
-% The hyperref package gives us a pdf with properly built
-% internal navigation ('pdf bookmarks' for the table of contents,
-% internal cross-reference links, web links for URLs, etc.)
-\usepackage{hyperref}
-
-%\hypersetup{pdftex,  % needed for pdflatex
-%  breaklinks=true,  % so long urls are correctly broken across lines
-%  colorlinks=true,
-%  urlcolor=blue,
-%  linkcolor=darkorange,
-%  citecolor=darkgreen,
-%  }
-
-\hypersetup{pdftex,  % needed for pdflatex
-  breaklinks=true,  % so long urls are correctly broken across lines
-  colorlinks=true,
-  urlcolor=black,
-  linkcolor=black,
-  citecolor=black,
-}
-
-\usepackage{url}
-
-%% Define a new 'leo' style for the package that will use a smaller font.
-\makeatletter
-\def\url@leostyle{%
-  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
-\makeatother
-%% Now actually use the newly defined style.
-\urlstyle{leo}
-
-% enables straight single quote
-\makeatletter
-\let \@sverbatim \@verbatim
-\def \@verbatim {\@sverbatim \verbatimplus}
-{\catcode`'=13 \gdef \verbatimplus{\catcode`'=13 \chardef '=13 }}
-\makeatother
-
-% enables backticks in verbatim
-\makeatletter
-{\catcode`\`=13
-\xdef\@verbatim{\unexpanded\expandafter{\@verbatim}\chardef\noexpand`=18 }
-}
-\makeatother
-
-%\newcommand{\CX}{\mathcal{X}}
-%\newcommand{\PMF}{\mathrm{PMF}}
-%\newcommand{\PDF}{\mathrm{PDF}}
-%\newcommand{\CDF}{\mathrm{CDF}}
-%\newcommand{\N}[2]{\mathcal{N}\left(#1,#2\right)}
-%\newcommand{\empavg}[2]{\frac{1}{#1}\sum_{i=1}^{#1}\left[#2\right]}
-%\newcommand{\E}[1]{{\rm I\kern-.3em E}\left[#1\right]}
-%\newcommand{\Var}[1]{\mathrm{Var}\left[#1\right]}
-%\newcommand{\Cov}[1]{\mathrm{Cov}\left[#1\right]}
-%\newcommand{\bias}[1]{\operatorname{Bias}\left[#1\right]}
-%\newcommand{\sign}[1]{\operatorname{sign}\left(#1\right)}
-%\newcommand{\df}[1]{\text{df}\left(#1\right)}
-%\def\ci{\perp\!\!\!\perp}
-%\newcommand{\argmax}[1]{\underset{#1}{\operatorname{argmax}}}
-%\newcommand{\argmin}[1]{\underset{#1}{\operatorname{argmin}}}
-%\newcommand{\iid}{\stackrel{\mathrm{iid}}{\sim}}
-
-
-\usepackage{algpseudocode}
-\algtext*{EndWhile}% Remove "end while" text
-\algtext*{EndIf}% Remove "end if" text
-\algtext*{EndFor}% Remove "end if" text
-\algtext*{EndFunction}% Remove "end if" tex
-
-\newcommand{\reals}{\mathbf{R}}
-\newcommand{\ints}{\mathbf{Z}}
-\newcommand{\rationals}{\mathbf{Q}}
-
-\usepackage{cancel}
-
-\newcommand\SetSymbol[1][]{\nonscript\:#1\vert\allowbreak\nonscript\:\mathopen{}}
-\providecommand\given{} % to make it exist
-\DeclarePairedDelimiterX\Set[1]\{\}{\renewcommand\given{\SetSymbol[\delimsize]}#1}
-
-\newcommand{\smallcirc}{\mathbin{\text{\raisebox{0.2ex}{\scalebox{0.6}{$\circ$}}}}}
-\newcommand*\dif{\mathop{}\!\mathrm{d}}
-\newcommand{\pvalue}{\emph{p}-value}
-
+\usepackage{dsfont}
 \usepackage{psfrag}
 \usepackage{epsfig}
-
-\usepackage{fancyhdr}
 \usepackage{float}
-\usepackage{pdfpages}
 
-\renewcommand{\floatpagefraction}{1}
-\renewcommand{\topfraction}{1}
-\renewcommand{\bottomfraction}{1}
-\newcommand{\comment}[1]{}
 \renewcommand{\a}{\alpha}
 \newcommand{\1}[2]{\mathds{1}_{#1 \times #2}}
 \newcommand{\one}{\mathbf{1}}

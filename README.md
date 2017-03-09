@@ -1,8 +1,8 @@
 # Biostatistics M.A. Thesis
 
-> "Targeted Learning of Variable Importance Measures with Variance Moderation
-> for Biomarker Discovery," a masters thesis submitted in partial satisfaction
-> of the requirements for the M.A. in Biostatistics, at U.C. Berkeley, by [Nima
+> "Targeted Learning methods with empirical Bayes moderation for biomarker
+> discovery," a masters thesis submitted in partial satisfaction of the
+> requirements for the M.A. in Biostatistics, at U.C. Berkeley, by [Nima
 > Hejazi](http://nimahejazi.org).
 
 ---
@@ -38,13 +38,6 @@ __The compiled thesis (PDF) may be found
 _N.B._, a functional installation of a LaTeX distribution (_e.g._,
 [MacTeX](http://www.tug.org/mactex/)) is required to compile this thesis
 document.
-
-### Jank
-
-* For a reason best described as mind-boggling, invoking `make` a single time
-    simply results in the creation of log files (in the subdirectory `output`);
-    however, invoking `make` a second time immediately afterward compiles the
-    desired document in PDF, located in a subdirectory of the same name.
 
 ---
 
