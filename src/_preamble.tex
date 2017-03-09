@@ -7,12 +7,13 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{dsfont}
+\usepackage{mathptmx}
 
-\usepackage{amsthm}
-\usepackage{thmtools}
-\declaretheorem[name=Theorem]{thm}
-\declaretheorem[style=definition]{example}
-\declaretheorem[style=definition]{definition}
+%\usepackage{amsthm}
+%\usepackage{thmtools}
+%\declaretheorem[name=Theorem]{thm}
+%\declaretheorem[style=definition]{example}
+%\declaretheorem[style=definition]{definition}
 
 %-----------------------------------------------------------------------------
 % Special-purpose color definitions (dark enough to print OK in black and white)
@@ -69,22 +70,22 @@
 }
 \makeatother
 
-\newcommand{\CX}{\mathcal{X}}
-\newcommand{\PMF}{\mathrm{PMF}}
-\newcommand{\PDF}{\mathrm{PDF}}
-\newcommand{\CDF}{\mathrm{CDF}}
-\newcommand{\N}[2]{\mathcal{N}\left(#1,#2\right)}
-\newcommand{\empavg}[2]{\frac{1}{#1}\sum_{i=1}^{#1}\left[#2\right]}
-\newcommand{\E}[1]{{\rm I\kern-.3em E}\left[#1\right]}
-\newcommand{\Var}[1]{\mathrm{Var}\left[#1\right]}
-\newcommand{\Cov}[1]{\mathrm{Cov}\left[#1\right]}
-\newcommand{\bias}[1]{\operatorname{Bias}\left[#1\right]}
-\newcommand{\sign}[1]{\operatorname{sign}\left(#1\right)}
-\newcommand{\df}[1]{\text{df}\left(#1\right)}
-\def\ci{\perp\!\!\!\perp}
-\newcommand{\argmax}[1]{\underset{#1}{\operatorname{argmax}}}
-\newcommand{\argmin}[1]{\underset{#1}{\operatorname{argmin}}}
-\newcommand{\iid}{\stackrel{\mathrm{iid}}{\sim}}
+%\newcommand{\CX}{\mathcal{X}}
+%\newcommand{\PMF}{\mathrm{PMF}}
+%\newcommand{\PDF}{\mathrm{PDF}}
+%\newcommand{\CDF}{\mathrm{CDF}}
+%\newcommand{\N}[2]{\mathcal{N}\left(#1,#2\right)}
+%\newcommand{\empavg}[2]{\frac{1}{#1}\sum_{i=1}^{#1}\left[#2\right]}
+%\newcommand{\E}[1]{{\rm I\kern-.3em E}\left[#1\right]}
+%\newcommand{\Var}[1]{\mathrm{Var}\left[#1\right]}
+%\newcommand{\Cov}[1]{\mathrm{Cov}\left[#1\right]}
+%\newcommand{\bias}[1]{\operatorname{Bias}\left[#1\right]}
+%\newcommand{\sign}[1]{\operatorname{sign}\left(#1\right)}
+%\newcommand{\df}[1]{\text{df}\left(#1\right)}
+%\def\ci{\perp\!\!\!\perp}
+%\newcommand{\argmax}[1]{\underset{#1}{\operatorname{argmax}}}
+%\newcommand{\argmin}[1]{\underset{#1}{\operatorname{argmin}}}
+%\newcommand{\iid}{\stackrel{\mathrm{iid}}{\sim}}
 
 
 \usepackage{algpseudocode}
@@ -106,3 +107,58 @@
 \newcommand{\smallcirc}{\mathbin{\text{\raisebox{0.2ex}{\scalebox{0.6}{$\circ$}}}}}
 \newcommand*\dif{\mathop{}\!\mathrm{d}}
 \newcommand{\pvalue}{\emph{p}-value}
+
+\usepackage{psfrag}
+\usepackage{epsfig}
+
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{pdfpages}
+
+\renewcommand{\floatpagefraction}{1}
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+\newcommand{\comment}[1]{}
+\renewcommand{\a}{\alpha}
+\newcommand{\1}[2]{\mathds{1}_{#1 \times #2}}
+\newcommand{\one}{\mathbf{1}}
+\renewcommand{\b}{\beta}
+\newcommand{\e}{\varepsilosn}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\u}{\mathbf{u}}
+\newcommand{\rank}{\mbox{rank}}
+\renewcommand{\sp}{\mbox{span}}
+\newcommand{\prj}{\mbox{proj}}
+%\newcommand\esp{{\mathbb{E}}}
+\newcommand\prob{{\mathbb{P}\text{r}}}
+\newcommand\var{{\mathbb{V}\text{ar}}}
+%\newcommand\cov{{\mathbb{C}\text{ov}}}
+%\newcommand\corr{{\mathbb{C}\text{orr}}}
+\newcommand\loin{{\mathcal N}}
+\newcommand\loif{{\mathcal F}}
+\newcommand\loix{{{\mathcal X}2}}
+\newcommand\loit{{{\mathcal S}\text{t}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\cov }{\mathrm{cov}}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proof}{Proof}
+\newtheorem{define}{{Definition}}
+\newtheorem{algorithm}{Algorithm}
+
+%Interligne (pour la version finale: 1.15 parait un bon compromis)
+\renewcommand{\baselinestretch}{1.15}
+\newcommand{\TMLE}{\mathrm{TMLE}}
+% caption (pris dans /usr/local/lib/tex/inputs/book.sty)
+\makeatletter
+\long\def\@makecaption#1#2{
+   \vskip 11pt
+   \setbox\@tempboxa\hbox{\parbox{12cm}{\footnotesize \hspace*{0.5cm}
+    {\bf #1:}~~{\sl #2}}}
+   \ifdim \wd\@tempboxa >\hsize   % IF longer than one line:
+       \unhbox\@tempboxa\par      %   THEN set as ordinary paragraph.
+     \else                        %   ELSE  center.
+       \hbox to\hsize{\hfil\box\@tempboxa\hfil}
+   \fi}
+\makeatother
