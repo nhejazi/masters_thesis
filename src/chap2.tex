@@ -1,6 +1,6 @@
 \chapter{Methodology}
 
-\section{Data, Model and Target Parameter}\label{data}
+\section{Data and Statistical Model}\label{data}
 
 Other have proposed using estimators developed for lower dimensional ``causal
 inference'' problems to derive nonparametric association estimators in context
@@ -36,6 +36,8 @@ smoking status ($W_{3}$) is binary, BMI ($W_{4}$) is a continuous measure, and
 alcohol consumption ($W_{5}$) is binary; $A$ is a binary exposure; and $Y_{b}$
 are miRNA expression measures.
 
+\section{The Target Parameter}\label{data}
+
 To define the parameter of interest, generally, let $\Psi(P_{0})$ be the
 target parameter based on a function $\Psi$ that maps the probability
 distribution $P_{0}$ into the target feature of interest. Thus, the parameter
@@ -68,7 +70,7 @@ models, leaving one free to fit the requisite models data-adaptively, minimizing
 assumptions wherever possible, and yet still estimating a relatively simple
 parameter with rich scientific interpretation.
 
-\subsection{Estimation}\label{estimation}
+\section{Statistical Estimation}\label{estimation}
 
 As noted previously (in Section~\ref{targetparam}), the target parameter is
 defined as a feature of the unknown probability distribution $P_{0}$. While
@@ -90,7 +92,7 @@ Learner), and a bias-reducing augmentation (targeted maximum likelihood
 estimation; TMLE) with optimal properties for minimizing the error of
 estimation and deriving robust inference.
 
-\subsubsection{Using the Super Learner algorithm}\label{superlearner}
+\subsection{Using the Super Learner algorithm}\label{superlearner}
 
 The first step in the two-stage TMLE procedure is to derive an initial estimate
 of $Q^{b}_{0}$, referred to as $Q^{(b, 0)}_{n}$. For instance, one could assume
@@ -181,7 +183,7 @@ in this case, based on estimates $\hat{g},Q^{(b,1)}_n$.
 
 \section{Statistical Inference}\label{inference}
 
-\subsection{The approach of influence curves}\label{ic}
+\subsection{An influence curve-based approach}\label{ic}
 
 As shown in~\cite{van2011targeted}, $\Psi_b(P^*_n)$ is an asymptotically
 linear estimator of $\Psi_b(P_0)$, with influence curve $IC(O_i)$ if it

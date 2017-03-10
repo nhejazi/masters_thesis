@@ -1,56 +1,35 @@
-\chapter{Discussion}
+\chapter{Software}
 
-The goal of the present paper is the introduction of an automated, robust
-method for analyzing high-dimensional exposure and Omics data with relatively
-modest sample sizes. In the provided examples, the challenge was two-fold,
-including both simultaneous inference for a large number of comparisons and
-adjustment for potential confounders, all in the context of a large statistical
-model and small numbers of biological replicates. Since the goal here is
-estimation within a very large statistical model, the technique must involve
-data-adaptive estimation, while still providing trustworthy statistical
-inference and estimators grounded in semiparametric efficiency theory. That is,
-given the parameter of interest and the nature of the statistical model, we
-maintain that the choice guiding the algorithm should not be \textit{ad hoc},
-but rather based on the relative efficiency of competing estimators. We have
-proposed methods that draw on existing work in statistical genomics and merge
-these with modern proposals for the analysis of variable importance, ultimately
-yielding a procedure that data-adaptively identifies promising biomarkers from
-a large set and that can be applied to data generated from experiments
-belonging to a large class of study designs.
+To support widespread use of this newly developed methodology, an R package,
+``biotmle'', which provides a generalized implementation of this biomarker
+discovery procedure, has been made publicly available. As previously described
+in~\ref{estimation}, the method, based on targeted minimum loss-Based
+estimation (TMLE)~\cite{van2011targeted} and a generalization of the moderated
+t-statistic of~\cite{smyth2004linear}, is designed for use with both microarray
+and next-generation biological sequencing data. The statistical approach made
+available in this software package relies on the use of TMLE to rigorously
+evaluate the association between a set of potential biomarkers and another
+variable of interest while adjusting for potential confounding from another set
+of user-specified covariates. The implementation is in the form of a package for
+the R language for statistical computing \cite{R}.
 
-We illustrated the method using an example miRNA data set (featuring benzene
-exposure) by applying, on a probe-by-probe basis, the outlined approach,
-combining TMLE with the moderated t-statistic to estimate the association of
-each potential biomarker with exposure. Thus, we present a flexible
-generalization of the moderated t-statistic to the case of asymptotically
-linear paramaters, obtaining robust small-sample inference, derived from
-influence curve-based estimation of the parameter of interest. The results
-suggest that instabilities inherent in small-sample inference can be
-ameliorated by combining this asymptotically efficient estimator of the ATE
-(based on TMLE) with the moderated t-statistic (implemented in \textbf{Limma};
-in our example, this results in the isolation of fewer statistically significant
-biomarkers. Since application of the \textbf{Limma} framework has no impact on
-asymptotics --- the adjustment to the within probe inference becomes negligible
-as sample size grows --- we can readily use the asymptotic theory underlying
-TMLE.
+There are two principal ways in which the biomarker discovery techniques in
+the ``biotmle'' R package may be used: to evaluate the association between (1) a
+phenotypic measure (say, environmental exposure) and a biomarker of interest,
+and (2) an outcome of interest (e.g., survival status at a given time) and a
+biomarker measurement, both while controlling for background covariates (e.g.,
+BMI, age). By using a TMLE-based procedure to estimate the Average Treatment
+Effect (ATE) in a targeted manner, the package produces interpretable results
+in the form of a variable importance measure (VIM) (see~\cite{van2011targeted}
+for an extended discussion), making the ``biotmle'' package well-suited for
+applications in bioinformatics, genomics, and molecular epidemiology.
 
-This combination of existing methods offers many advantages: 1) it estimates
-target parameters relevant to specific scientific questions, in the presence of
-many confounders, without placing assumptions on the underlying statistical
-model; 2) it uses the theoretical optimality of loss-based estimation via the
-Super Learner algorithm, which optimally balances the bias-variance tradeoff in
-finite samples by appropriately choosing a level of parsimony to match the
-information available in the sample; 3) its reliance on TMLE-based estimators
-reduces residual bias and adds an appropriate degree of smoothing, making
-influence curve-based based inference available for the target parameters of
-interest; and 4) it robustifies inference by using the moderated t-statistic to
-derive joint inference with fewer false positives than would result from
-otherwise poor estimation of the sampling variability of the estimator. The
-result is a theoretically sound, data-adaptive estimation procedure, based on
-pre-specified, flexible learning algorithms, that guarantees robust statistical
-inference. While the continuing development of new biotechnologies promises new
-insights into the myriad relationships between biomarkers and health,
-procedures like the one presented here will surely be necessary to ameliorate
-the pitfalls of increasing dimensionality of the scientific problems of
-interest, by providing a rigorous and generalizable statistical framework for
-accurate, robust, and conservative biomarker discovery.
+While the principal table of results produced by this R package matches those
+produced by the immensely popular ``limma'' R package \cite{smyth2005limma},
+the package provides several unique utilities, including several plotting
+methods --- for example, a heatmap based on the recently developed ``superheat''
+R package~\cite{barter2017superheat} --- and a custom ``biotmle'' class,
+based on the popular ``SummarizedExperiment'' class. While the R package is
+currently publicly available at \url{https://github.com/nhejazi/biotmle},
+submission of the software package to the centralized repository maintained by
+the Bioconductor project~\cite{gentleman2004bioconductor} is underway.
