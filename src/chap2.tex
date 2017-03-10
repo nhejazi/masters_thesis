@@ -176,8 +176,8 @@ derived using the augmented estimate of $Q$:
 \begin{eqnarray}
 \hat{\Psi}_b(P^*_n) = \frac{1}{n}\sum^{n}_{i = 1}[Q^{(b, 1)}_n(1, W_i) - Q^{(b, 1)}_{n}(0, W_i)],
 \end{eqnarray}
-, where $P^*_n$ is the estimate of the data-generating distribution based on
-TMLE, in this case, based on estimates $\hat{g},Q^{(b,1)}_n$.
+where $P^*_n$ is the estimate of the data-generating distribution based on TMLE,
+in this case, based on estimates $\hat{g},Q^{(b,1)}_n$.
 
 \section{Statistical Inference}\label{inference}
 
@@ -190,15 +190,18 @@ satisfies
 \sqrt{n}(\Psi_b(P^*_n) - \Psi_b(P_0)) = \frac{1}{\sqrt{n}}\sum^{n}_{i = 1}IC(O_i) + o_p(1).
 \label{eqn:IC}
 \end{eqnarray}
+
 Note from equation~\ref{eqn:IC} above that the variance of $\hat{\Psi}_b(P_n)$
 is well approximated by the sample variance of the influence curve divided by
 the sample size. When considering biomarkers, the plug-in influence curve (IC)
 for the ATE is
+
 \begin{eqnarray*}
 IC_{b, n}(O_i) = \left[ \frac{I(A_i = 1)}{g_n(1 \mid W_i)} - \frac{I(A_i = 0)}
   {g_n(0 \mid W_i)} \right] (Y_{b, i} - Q^{(b, 1)}_{n}(A_i, W_i)) +
   Q^{(b, 1)}_{n}(1, W_i) - Q^{(b,1)}_{n}(0, W_i) - \Psi_b(P^*_n).
 \end{eqnarray*}
+
 With the above in hand, we can derive asymptotic p-values and confidence
 intervals (CI) with a Wald-type approach:
 \begin{eqnarray}
