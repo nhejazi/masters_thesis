@@ -1,8 +1,8 @@
 # Biostatistics M.A. Thesis
 
 > "Targeted Learning methods with empirical Bayes moderation for biomarker
-> discovery," a masters thesis submitted in partial satisfaction of the
-> requirements for the M.A. in Biostatistics, at U.C. Berkeley, by [Nima
+> discovery," a thesis submitted in partial satisfaction of the requirements for
+> the Master of Arts (M.A.) in Biostatistics, at U.C. Berkeley, by [Nima
 > Hejazi](http://nimahejazi.org).
 
 ---
@@ -13,17 +13,8 @@ shrinkage to improve the stability of estimates of variable importance measures
 (VIMs) computed using Targeted Minimum Loss-Based Estimation (TMLE), in the
 context of problems of biomarker discovery.
 
-__The compiled thesis (PDF) may be found
-[here](http://www.stat.berkeley.edu/~nhejazi/pubs/thesis-masters-biostat.pdf).__
-
----
-
-## Related
-
-* [`biotmle`](http://nimahejazi.org/biotmle/) - R package that facilitates
-  biomarker discovery by generalizing the moderated t-statistic of Smyth for use
-  with asymptotically linear target parameters (to assess variable importance)
-  by using Targeted Minimum Loss-Based Estimation.
+__The compiled thesis (in PDF) is available for browsing
+[here](http://www.stat.berkeley.edu/~nhejazi/publications/thesis-ma-biostat.pdf).__
 
 ---
 
@@ -38,6 +29,15 @@ __The compiled thesis (PDF) may be found
 _N.B._, a functional installation of a LaTeX distribution (_e.g._,
 [MacTeX](http://www.tug.org/mactex/)) is required to compile this thesis
 document.
+
+---
+
+## Related
+
+* [`biotmle`](http://nimahejazi.org/biotmle/) - R package that facilitates
+  biomarker discovery by generalizing the moderated t-statistic of Smyth for use
+  with asymptotically linear target parameters using Targeted Minimum Loss-Based
+  Estimation.
 
 ---
 
