@@ -22,14 +22,14 @@ the $b^{th}$ biomarker and $S_0$ is the common standard deviation across all
 biomarkers towards which empirical Bayes performs shrinkage.
 
 In order to isolate a set of differentially upregulated or downregulated
-biomarkers, we apply the moderated t-statistic of \cite{smyth2004linear} to
+biomarkers, we apply the moderated t-statistic of~\cite{smyth2004linear} to
 test for group differences based on the observed benzene exposure status. This
 results in a table including the moderated t-statistic for each test of the
 ATE-transformed values between the exposed and unexposed groups (a coefficient
 corresponding to exposure in the gene-wise linear models fit via LIMMA),
 standard errors of the coefficient, raw p-values, and the adjusted p-values
 based on the Benjamini-Hochberg procedure for controlling the False Discovery
-Rate \cite{benjamini1995controlling}. See table ~\ref{table:topresults} below:
+Rate \cite{benjamini1995controlling}. See table~\ref{table:topresults} below:
 
 % latex table generated in R 3.3.2 by xtable 1.8-2 package
 % Fri Mar  3 14:28:32 2017
@@ -77,11 +77,12 @@ The analysis presented can be completely replicated by using the ``biotmle'' R
 package, which provides facilities for visualizing the results. Applying this
 R package, a heatmap visualizing the ATE difference induced by benzene exposure,
 with the 125 subjects on the x-axis and the top 25 biomarkers based on
-BH-corrected p-values on the y-axis, was produced. The heatmap is displayed as
-\ref{fig:heatmap} below:
+BH-corrected p-values on the y-axis, was produced. The heatmap, created using
+the ``superheat'' R package \cite{barter2017superheat}, is displayed as
+Figure~\ref{fig:heatmap} below:
 
 \begin{figure}[H]
-  \vspace{-8em}
+  \vspace{-6em}
   \label{fig:heatmap}
   \centering
   \includegraphics[scale=0.75]{figs/superheatmap.pdf}
@@ -91,15 +92,15 @@ BH-corrected p-values on the y-axis, was produced. The heatmap is displayed as
 \end{figure}
 
 As expected, Limma reduced the spread of the standard deviation estimates of
-the the influence curve by probe ($\widetilde{\sigma}^b_n$) across the
-$\sim 20,000$ probes, and the corresponding Wald statistics for testing the
-target parameter, in comparison of using the original standard error,
-$\sigma^b_n$. The results of our analysis indicate that the moderated
-t-statistic applied to the ATE constitutes a powerful approach for assessing
-variable importance, based on exposure, in the context of high-dimensional
-investigations of biomarkers. We conclude that using this adaptation of TMLE,
-complimented by the moderated t-statistic of the R package LIMMA, reduces the
-variability of standard errors and reduces the number of significant probes,
-leading to more stable and robust inference, while providing the opportunity to
-evaluate biomarkers in the context of statistical parameters of scientific
-relevance, such as the average treatment effect focused on in the above example.
+the influence curve by probe ($\widetilde{\sigma}^b_n$) across the $\sim 20,000$
+probes, and the corresponding Wald statistics for testing the target parameter,
+in comparison of using the original standard error, $\sigma^b_n$. The results of
+our analysis indicate that the moderated t-statistic applied to the ATE
+constitutes a powerful approach for assessing variable importance, based on
+exposure, in the context of high-dimensional investigations of biomarkers. We
+conclude that using this adaptation of TMLE, complimented by the moderated
+t-statistic of the R package LIMMA, reduces the variability of standard errors
+and reduces the number of significant probes, leading to more stable and robust
+inference, while providing the opportunity to evaluate biomarkers in the context
+of statistical parameters of scientific relevance, such as the average treatment
+effect focused on in the above example.

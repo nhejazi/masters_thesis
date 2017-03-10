@@ -13,7 +13,7 @@ shrinkage to improve the stability of estimates of variable importance measures
 (VIMs) computed using Targeted Minimum Loss-Based Estimation (TMLE), in the
 context of problems of biomarker discovery.
 
-__The compiled thesis (in PDF) is available for browsing
+__The compiled thesis document (in PDF) is available for browsing
 [here](http://www.stat.berkeley.edu/~nhejazi/publications/thesis-ma-biostat.pdf).__
 
 ---
