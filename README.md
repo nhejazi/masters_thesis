@@ -1,17 +1,17 @@
 # Biostatistics M.A. Thesis
 
-> "Targeted Learning methods with empirical Bayes moderation for biomarker
-> discovery," a thesis submitted in partial satisfaction of the requirements for
-> the Master of Arts (M.A.) in Biostatistics, at U.C. Berkeley, by [Nima
-> Hejazi](http://nimahejazi.org).
+> "Generalized application of empirical Bayes statistics to asymptotically
+> linear parameters," a thesis submitted in partial satisfaction of the
+> requirements for the Master of Arts (M.A.) in Biostatistics, at U.C. Berkeley,
+> by [Nima Hejazi](http://nimahejazi.org).
 
 ---
 ## Summary
 
 This thesis presents a generalized approach for employing empirical Bayes
-shrinkage to improve the stability of estimates of variable importance measures
-(VIMs) computed using Targeted Minimum Loss-Based Estimation (TMLE), in the
-context of problems of biomarker discovery.
+moderation to improve the stability of estimates of variable importance measures
+(VIMs) using Targeted Minimum Loss-Based Estimation (TMLE), primarily in the
+context of problems often encountered in high-dimensional biology.
 
 __The compiled thesis document (in PDF) is available for browsing
 [here](http://www.stat.berkeley.edu/~nhejazi/publications/thesis-ma-biostat.pdf).__
