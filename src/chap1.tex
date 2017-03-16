@@ -1,41 +1,46 @@
 \chapter{Introduction}
 
 This paper proposes a straightforward extension of an empirical Bayes
-inferential method, LIMMA \cite{smyth2004linear}, to general asymptotically
-linear estimators \cite{tsiatis2007semiparametric,van2011targeted}. This means
-that more complex parameters and estimators in the context of many comparisons
-can benefit of the inferential robustness that LIMMA provides. As a motivating
-example, consider a previous study of mRNA expression and occupational exposure
-to benzene \cite{mchale2011global}. The data consisted of around 22,000 genes
-(\textit{Illumina Human Ref-8 BeadChips} platform) on 125  subjects in factories
-in China. The variable of interest was occupational benzene exposure (measured
-in various ways), but also information on confounding factors were also recorded
-(e.g., gender, smoking status). Taking benzene exposure to be binary, the
-question of interest regarded the adjusted association of each of the 20K+
-expression values with benzene exposure. One could easily use the LIMMA approach
-by fitting a parametric linear model with say benzene as outcome and both
-exposure and confounders as predictors, and performing a multiple comparison
-analysis on the estimated coefficients associated with benzene. However, one
-might want to use a more nonparametric procedure, specifically one that
-estimates a nonparametric estimand, where fitting of the model predicting
-benzene could be done via automated, data-adaptive techniques (e.g., machine
-learning). We show that utilizing LIMMA in situations such as this is possible
-if asymptotically linear estimators are used, that is, where the estimator minus
-the true parameter value can be approximated by an i.i.d. sum of random
-variables (called the influence curve). Many complex parameters have
-asymptotically linear estimators, and so with small modifications, LIMMA can be
-applied to a wide variety of settings. This is particularly valuable in smaller
-samples, as sampling distribution estimates for these complex estimators can be
-unstable, yielding false positives, and LIMMA can ameliorate their performance
-by borrowing estimates of the sampling variability across the variables of
-interests (in our case, gene expressions). In this way, one can use more
-data-adaptive methods to avoid the bias of arbitrary parametric assumptions
-(common in bioinformatic applications), while still providing a degree of
-robustness for this sometimes unstable estimators.
+inferential method --- the moderated t-statistic of Smyth, as implemented in the
+popular ``limma'' software package \cite{smyth2004linear} --- for general use
+with asymptotically linear parameters \cite{tsiatis2007semiparametric,
+van2011targeted}. By way of this extension, estimators of more complex target
+parameters, in the context of many comparisons, can benefit from the inferential
+robustness that such moderated statistics provide. As a motivating example,
+consider a previous study of mRNA expression and occupational exposure to
+benzene \cite{mchale2011global}: The data consisted of around $22,000$ genes
+(measured via the \textit{Illumina Human Ref-8 BeadChips} platform) on $125$
+subjects in factories in China. In this study, the variable of interest was
+occupational exposure to benzene (measured in various ways), though information
+on confounding factors was also recorded (e.g., gender, smoking status). Taking
+benzene exposure to be binary, the quantity of interest can be framed as the
+adjusted association of each of the roughly $22,000$ expression values with
+benzene exposure. One could easily use the approach based on moderated
+statistics by fitting a parametric linear model with, say, benzene as outcome
+and both exposure and confounders as predictors, performing a multiple
+comparison correction on the estimated coefficients associated with benzene.
+However, it is generally desirable to utilize a procedure that is more
+assumption-free, specifically one estimating a nonparametric estimand, where
+fitting the model of interest could be done via automated, data-adaptive
+techniques (i.e., machine learning). We show that utilizing moderated statistics
+in such situations is possible if asymptotically linear parameters are used ---
+that is, where the difference between the values taken by the estimator and the
+true parameter may be approximated by a sum of i.i.d.~random variables (i.e.,
+the influence curve). Many complex parameters have representations that are
+asymptotically linear, and so with minor modifications, moderated statistics can
+be applied to a wide variety of settings. This is particularly valuable in
+smaller samples, as sampling distribution estimates for these complex estimators
+can be unstable, yielding false positives, a problem that moderated statistics
+are well-suited to ameliorate by borrowing estimates of the sampling variability
+across the variables of interest (in our case, gene expression measures). In
+this way, one can use data-adaptive methods to avoid the bias of arbitrary
+parametric assumptions, which are common in bioinformatic applications, while
+still adding a degree of robustness for these potentially unstable estimators.
 
 In the following sections, we first present in detail a data-adaptive, machine
 learning-based estimator of a well-known estimand for deriving adjusted
-associations. We then show how one can use the machinery of LIMMA to derive an
-empirical Bayes estimate of the standard error of this estimator (and, more
-generally, any asymptotically linear estimator) and finally apply the resulting
-procedure to the genomic example (benzene occupational exposure) noted above.
+associations. We then show how the machinery of moderated statistics can be used
+to derive an empirical Bayes estimate of the standard error of this estimator
+--- and, generally, for any asymptotically linear estimator. Finally, we apply
+the resulting procedure to the genomic example (of occupational benzene
+exposure) previously described.
