@@ -1,50 +1,51 @@
 \chapter{Discussion}
 
 The goal of the present paper is the introduction of an automated, robust
-method for analyzing high-dimensional exposure and Omics data with relatively
-modest sample sizes. In the provided examples, the challenge was two-fold,
-including both simultaneous inference for a large number of comparisons and
-adjustment for potential confounders, all in the context of a large statistical
-model and small numbers of biological replicates. Since the goal here is
-estimation within a very large statistical model, the technique must involve
+method for analyzing high-dimensional biological sequencing data with relatively
+modest sample sizes. In the provided examples, the challenges presented were
+two-fold, including both obtaining simultaneous inference for a large number of
+comparisons and adjustment to account for potential confounders of the
+association of interest, all in the context of a large statistical model and few
+biological replicates. Since the goal is estimation within a nonparametric
+(infinite-dimensional) statistical model, the techniques leveraged must involve
 data-adaptive estimation, while still providing trustworthy statistical
-inference and estimators grounded in semiparametric efficiency theory. That is,
-given the parameter of interest and the nature of the statistical model, we
-maintain that the choice guiding the algorithm should not be \textit{ad hoc},
-but rather based on the relative efficiency of competing estimators. We have
-proposed methods that draw on existing work in statistical genomics and merge
-these with modern proposals for the analysis of variable importance, ultimately
-yielding a procedure that data-adaptively identifies promising biomarkers from
-a large set and that can be applied to data generated from experiments
-belonging to a large class of study designs.
+inference, necessarily using estimators grounded in semiparametric efficiency
+theory. That is, given the parameter of interest and the nature of the
+statistical model, we maintain that the choice guiding the algorithm should not
+be \textit{ad hoc}, but rather based on the relative efficiency of competing
+estimators. We have proposed methods that draw on existing work in statistical
+genomics and merge these with modern proposals for the analysis of variable
+importance, ultimately yielding a procedure that data-adaptively identifies
+promising biomarkers from a large set and that can be applied to data generated
+from experiments belonging to a large class of study designs.
 
 We illustrated the method using an example miRNA data set (featuring benzene
 exposure) by applying, on a probe-by-probe basis, the outlined approach,
 combining TMLE with the moderated t-statistic to estimate the association of
 each potential biomarker with exposure. Thus, we present a flexible
-generalization of the moderated t-statistic to the case of asymptotically
-linear paramaters, obtaining robust small-sample inference, derived from
-influence curve-based estimation of the parameter of interest. The results
-suggest that instabilities inherent in small-sample inference can be
-ameliorated by combining this asymptotically efficient estimator of the ATE
-(based on TMLE) with the moderated t-statistic (implemented in \textbf{Limma};
-in our example, this results in the isolation of fewer statistically significant
-biomarkers. Since application of the \textbf{Limma} framework has no impact on
-asymptotics --- the adjustment to the within probe inference becomes negligible
-as sample size grows --- we can readily use the asymptotic theory underlying
-TMLE.
+generalization of moderated statistics to the case of asymptotically linear
+parameters, obtaining robust small-sample inference, derived from influence
+curve-based estimation of the parameter of interest. The results suggest that
+instabilities inherent in small-sample inference can be ameliorated by combining
+this asymptotically efficient estimator of the ATE (based on TMLE) with the
+moderated t-statistic (implemented in the ``limma'' software package); in our
+example, this results in the isolation of fewer statistically significant
+biomarkers. Since application of the moderated statistics has no impact on
+asymptotic properties of TMLE-based estimation procedures --- the adjustment to
+the within probe inference becomes negligible as sample size grows --- we can
+readily use the asymptotic theory underlying TMLE.
 
-This combination of existing methods offers many advantages: 1) it estimates
+This combination of existing methods offers many advantages: (1) it estimates
 target parameters relevant to specific scientific questions, in the presence of
 many confounders, without placing assumptions on the underlying statistical
-model; 2) it uses the theoretical optimality of loss-based estimation via the
+model; (2) it uses the theoretical optimality of loss-based estimation via the
 Super Learner algorithm, which optimally balances the bias-variance tradeoff in
 finite samples by appropriately choosing a level of parsimony to match the
-information available in the sample; 3) its reliance on TMLE-based estimators
+information available in the sample; (3) its reliance on TMLE-based estimators
 reduces residual bias and adds an appropriate degree of smoothing, making
 influence curve-based based inference available for the target parameters of
-interest; and 4) it robustifies inference by using the moderated t-statistic to
-derive joint inference with fewer false positives than would result from
+interest; and (4) it robustifies inference by leveraging  moderated statistics
+to derive joint inference with fewer false positives than would result from
 otherwise poor estimation of the sampling variability of the estimator. The
 result is a theoretically sound, data-adaptive estimation procedure, based on
 pre-specified, flexible learning algorithms, that guarantees robust statistical
