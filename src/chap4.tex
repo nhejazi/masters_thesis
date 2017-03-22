@@ -1,26 +1,26 @@
 \chapter{Discussion}
 
-The goal of the present paper is the introduction of an automated, robust
-method for analyzing high-dimensional biological sequencing data with relatively
-modest sample sizes. In the provided examples, the challenges presented were
-two-fold, including both obtaining simultaneous inference for a large number of
-comparisons and adjustment to account for potential confounders of the
-association of interest, all in the context of a large statistical model and few
-biological replicates. Since the goal is estimation within a nonparametric
-(infinite-dimensional) statistical model, the techniques leveraged must involve
-data-adaptive estimation, while still providing trustworthy statistical
-inference, necessarily using estimators grounded in semiparametric efficiency
-theory. That is, given the parameter of interest and the nature of the
-statistical model, we maintain that the choice guiding the algorithm should not
-be \textit{ad hoc}, but rather based on the relative efficiency of competing
-estimators. We have proposed methods that draw on existing work in statistical
-genomics and merge these with modern proposals for the analysis of variable
-importance, ultimately yielding a procedure that data-adaptively identifies
-promising biomarkers from a large set and that can be applied to data generated
-from experiments belonging to a large class of study designs.
+This thesis has introduced an automated, robust method for analyzing
+high-dimensional biological sequencing data with relatively modest sample sizes.
+In the provided examples, the challenges presented were two-fold, including both
+obtaining simultaneous inference for a large number of comparisons and
+adjustment to account for potential confounders of the association of interest,
+in the context of a large statistical model and few biological replicates. Since
+the goal is estimation within a nonparametric (infinite-dimensional) statistical
+model, the techniques leveraged must involve data-adaptive estimation, while
+still providing trustworthy statistical inference, necessarily using estimators
+grounded in semiparametric efficiency theory. That is, given the parameter of
+interest and the nature of the statistical model, we maintain that the choice
+guiding the algorithm should not be \textit{ad hoc}, but rather based on the
+relative efficiency of competing estimators. We have proposed methods that draw
+on existing work in statistical genomics and merge these with modern proposals
+for the analysis of variable importance, ultimately yielding a procedure that
+data-adaptively identifies promising biomarkers from a large set and that can be
+applied to data generated from experiments belonging to a large class of study
+designs.
 
 We illustrated the method using an example miRNA data set (featuring benzene
-exposure) by applying, on a probe-by-probe basis, the outlined approach,
+exposure) by applying, on a biomarker-by-biomarker basis, the outlined approach,
 combining TMLE with the moderated t-statistic to estimate the association of
 each potential biomarker with exposure. Thus, we present a flexible
 generalization of moderated statistics to the case of asymptotically linear
@@ -31,8 +31,8 @@ this asymptotically efficient estimator of the ATE (based on TMLE) with the
 moderated t-statistic (implemented in the ``limma'' software package); in our
 example, this results in the isolation of fewer statistically significant
 biomarkers. Since application of the moderated statistics has no impact on
-asymptotic properties of TMLE-based estimation procedures --- the adjustment to
-the within probe inference becomes negligible as sample size grows --- we can
+asymptotic properties of TMLE-based estimation procedures --- the adjustment for
+within-probe inference becomes negligible as sample size grows --- we can
 readily use the asymptotic theory underlying TMLE.
 
 This combination of existing methods offers many advantages: (1) it estimates
